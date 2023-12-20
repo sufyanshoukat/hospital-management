@@ -13,6 +13,7 @@ import 'package:hospital_management/view/widget/my_text_widget.dart';
 import 'package:hospital_management/view/widget/review_widegt.dart';
 import 'package:hospital_management/view/widget/round_button.dart';
 import 'package:hospital_management/view/widget/specializations_card.dart';
+import 'package:readmore/readmore.dart';
 
 class HospitalsDetails extends StatefulWidget {
   const HospitalsDetails({super.key});
@@ -23,6 +24,8 @@ class HospitalsDetails extends StatefulWidget {
 
 class _HospitalsDetailsState extends State<HospitalsDetails>
     with TickerProviderStateMixin {
+  // Split the text into lines
+
   late final TabController _tabController;
 
   @override
@@ -42,6 +45,13 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
   bool showReadMore = false;
   @override
   Widget build(BuildContext context) {
+    String text =
+        '''Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.''';
+
+    List<String> lines = text.split("\n");
+    if (lines.length > 2 && lines[2].trim().isNotEmpty) {
+      showReadMore = true;
+    }
     return Scaffold(
       // backgroundColor: kTransperentColor,
       body: Stack(
@@ -184,15 +194,23 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
                   color: kBlackColor1,
                   weight: FontWeight.w500,
                 ),
+                //-----------------------------------------------
+                //-----------------------------------------------
+                //-----------------------------------------------
+                //-----------------------------------------------
                 Wrap(
                   children: [
-                    MyText(
-                      text:
-                          """Welcome to Better Care Hospital, where your health and well-being are our top priorities. Our hospital is a beacon of hope, healing, and... Read More""",
-                      size: 11.15,
-                      color: kBlackColor50Percent,
-                      weight: FontWeight.w400,
-                    ),
+                    ReadMoreText(
+                      'Welcome to Better Care Hospital, where your health and well-being are our top priorities. Our hospital is a beacon of hope, healing,',
+                      trimLines: 2,
+                      trimMode: TrimMode.Line,
+                      trimCollapsedText: 'Show more',
+                      trimExpandedText: 'Show less',
+                      style: AppStyling().readmoreStyle(
+                          color: kBlackColor50Percent, weight: FontWeight.w400),
+                      lessStyle: AppStyling().readmoreStyle(),
+                      moreStyle: AppStyling().readmoreStyle(),
+                    )
                   ],
                 ),
                 SizedBox(height: 12),
@@ -244,7 +262,7 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
                 ),
                 SizedBox(height: 20),
                 SizedBox(
-                  height: 200,
+                  height: 270,
                   width: double.maxFinite,
                   child: TabBarView(
                     physics: NeverScrollableScrollPhysics(),
@@ -317,9 +335,9 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
                       ),
                       //Third Widegt
                       //-----------------------------------
-                      Container(
-                        height: 50,
-                        color: Colors.red,
+                      Expanded(
+                        // height: 50,
+                        //color: Colors.red,
                         child: ListView.builder(
                           shrinkWrap: true,
                           physics: BouncingScrollPhysics(),

@@ -33,13 +33,15 @@ class AppStyling {
             topLeft: Radius.circular(20), topRight: Radius.circular(20)));
   }
 
-
-
-
-    BoxDecoration onBoardingBkImg(img) {
+  BoxDecoration onBoardingBkImg(img) {
     return BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(img),
-                  fit: BoxFit.cover));
+        image: DecorationImage(image: AssetImage(img), fit: BoxFit.cover));
+  }
+
+  TextStyle readmoreStyle(
+      {double fontSize = 12,
+      FontWeight weight = FontWeight.w500,
+      Color color = kSecondaryColor}) {
+    return TextStyle(fontSize: fontSize, fontWeight: weight, color: color);
   }
 }

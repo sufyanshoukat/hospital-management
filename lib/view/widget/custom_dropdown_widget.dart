@@ -13,18 +13,19 @@ class CustomDropDown extends StatelessWidget {
   Color? hintTextColor;
   final String? label;
   final bool haveLabel;
+  final double radius;
 
-  CustomDropDown({
-    super.key,
-    this.hint = '',
-    required this.items,
-    this.selectedValue,
-    required this.onChanged,
-    this.bgColor,
-    this.hintTextColor,
-    this.label,
-    this.haveLabel = true,
-  });
+  CustomDropDown(
+      {super.key,
+      this.hint = '',
+      required this.items,
+      this.selectedValue,
+      required this.onChanged,
+      this.bgColor,
+      this.hintTextColor,
+      this.label,
+      this.haveLabel = true,
+      this.radius = 5});
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +55,8 @@ class CustomDropDown extends StatelessWidget {
                   border: Border.all(
                     color: kTertiaryColor,
                   ),
-                  color: kPrimaryColor.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(5))),
+                  color: bgColor ?? kPrimaryColor.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(radius))),
           dropdownStyleData: DropdownStyleData(
               decoration: BoxDecoration(
             color: kTertiaryColor,

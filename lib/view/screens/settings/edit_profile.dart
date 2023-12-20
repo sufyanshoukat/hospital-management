@@ -3,6 +3,7 @@ import 'package:hospital_management/constants/app_colors.dart';
 import 'package:hospital_management/constants/app_images.dart';
 import 'package:hospital_management/constants/app_sizes.dart';
 import 'package:hospital_management/view/screens/auth/login/login.dart';
+import 'package:hospital_management/view/widget/custom_dropdown_widget.dart';
 import 'package:hospital_management/view/widget/my_text_widget.dart';
 import 'package:hospital_management/view/widget/sliver_app_bar_widget_first.dart';
 
@@ -58,9 +59,23 @@ class _EditProfileState extends State<EditProfile> {
 
                   Row(
                     children: [
-                      Expanded(child: dropdown("Country")),
+                      Expanded(
+                          child: CustomDropDown(
+                              radius: 10,
+                              haveLabel: false,
+                              bgColor: kTertiaryColor,
+                              hint: "Country",
+                              items: ['item 1', 'item 2'],
+                              onChanged: (v) {})),
                       SizedBox(width: 20),
-                      Expanded(child: dropdown("Gender")),
+                      Expanded(
+                          child: CustomDropDown(
+                              radius: 10,
+                              haveLabel: false,
+                              bgColor: kTertiaryColor,
+                              hint: "Gender",
+                              items: ['Male', 'Female'],
+                              onChanged: (v) {})),
                     ],
                   )
                 ],

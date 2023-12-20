@@ -6,6 +6,7 @@ import 'package:hospital_management/constants/app_sizes.dart';
 import 'package:hospital_management/view/screens/auth/otp/otp.dart';
 import 'package:hospital_management/view/screens/auth/register/register.dart';
 import 'package:hospital_management/view/screens/forget_password/forget_password.dart';
+import 'package:hospital_management/view/widget/checkbox_widget.dart';
 import 'package:hospital_management/view/widget/common_image_view_widget.dart';
 import 'package:hospital_management/view/widget/custom_textfield.dart';
 import 'package:hospital_management/view/widget/my_button.dart';
@@ -17,6 +18,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,11 +52,21 @@ class _LoginState extends State<Login> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  MyText(
-                    text: "Remember me",
-                    color: kBlackColor50Percent,
-                    weight: FontWeight.w400,
-                    size: 11,
+                  CheckBoxWidget(
+                    onChanged: (v) {
+                      isChecked = v!;
+                      setState(() {});
+                    },
+                    isChecked: isChecked,
+                  ),
+                  Expanded(
+                    child: MyText(
+                      paddingLeft: 10,
+                      text: "Remember me",
+                      color: kBlackColor50Percent,
+                      weight: FontWeight.w400,
+                      size: 11,
+                    ),
                   ),
                   MyText(
                     onTap: () {

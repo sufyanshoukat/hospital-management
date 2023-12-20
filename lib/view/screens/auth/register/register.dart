@@ -5,6 +5,7 @@ import 'package:hospital_management/constants/app_images.dart';
 import 'package:hospital_management/constants/app_sizes.dart';
 import 'package:hospital_management/constants/app_styling.dart';
 import 'package:hospital_management/view/screens/auth/login/login.dart';
+import 'package:hospital_management/view/widget/checkbox_widget.dart';
 import 'package:hospital_management/view/widget/my_button.dart';
 import 'package:hospital_management/view/widget/my_text_widget.dart';
 
@@ -14,6 +15,7 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,19 +59,31 @@ class _RegisterState extends State<Register> {
               ),
               SizedBox(height: 14),
 
-              RichText(
-                  text: TextSpan(
-                      text: 'By checking the box you agree to our',
-                      style: AppStyling().textSpanStyle(),
-                      children: [
-                    TextSpan(
-                        text: ' Terms',
-                        style: TextStyle(color: kSecondaryColor)),
-                    TextSpan(text: ' and'),
-                    TextSpan(
-                        text: ' Conditions',
-                        style: TextStyle(color: kSecondaryColor)),
-                  ]))
+              Row(
+                children: [
+                  CheckBoxWidget(
+                    onChanged: (v) {
+                      isChecked = v!;
+                      setState(() {});
+                    },
+                    isChecked: isChecked,
+                  ),
+                  SizedBox(width: 6),
+                  RichText(
+                      text: TextSpan(
+                          text: 'By checking the box you agree to our',
+                          style: AppStyling().textSpanStyle(),
+                          children: [
+                        TextSpan(
+                            text: ' Terms',
+                            style: TextStyle(color: kSecondaryColor)),
+                        TextSpan(text: ' and'),
+                        TextSpan(
+                            text: ' Conditions',
+                            style: TextStyle(color: kSecondaryColor)),
+                      ])),
+                ],
+              ),
             ],
           ),
         ),

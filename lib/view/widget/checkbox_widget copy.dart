@@ -14,13 +14,12 @@ class CheckBoxWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 5,
+      height: 20,
       width: 20,
       child: Checkbox(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
         side: BorderSide(
-            color:
-                (isChecked == true) ? kSecondaryColor : kBlackColor50Percent),
+            color: (isChecked == true) ? kSecondaryColor : kTertiaryColor),
         checkColor: Colors.white,
         activeColor: Colors.red,
         focusColor: Colors.amber,
