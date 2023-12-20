@@ -107,11 +107,6 @@ class _SettingState extends State<Setting> {
                       svgIcon: Assets.imagesHistoryIcon,
                     ),
                     _SettingTile(
-                      onTap: () {},
-                      title: "Setting",
-                      svgIcon: Assets.imagesSettingIcon,
-                    ),
-                    _SettingTile(
                       onTap: () {
                         Get.to(() => PrivacyPolicy());
                       },

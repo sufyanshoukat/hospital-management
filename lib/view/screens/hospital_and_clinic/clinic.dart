@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:hospital_management/constants/app_images.dart';
 import 'package:hospital_management/constants/app_sizes.dart';
+import 'package:hospital_management/view/screens/hospital_and_clinic/clinic_detail.dart';
 import 'package:hospital_management/view/widget/main_card.dart';
 import 'package:hospital_management/view/widget/simple_app_bar.dart';
 
@@ -31,11 +34,7 @@ class _ClinicState extends State<Clinic> {
             itemBuilder: (context, index) {
               return MainCard(
                 onCardTap: () {
-                  if (index == 0) {
-                    //Get.to(() => Hospitals());
-                  } else {
-                    //Get.to(() => Hospitals());
-                  }
+                  Get.to(() => ClinicDetails());
                 },
                 onFavTap: () {
                   isAddFav == false ? isAddFav = true : isAddFav = false;

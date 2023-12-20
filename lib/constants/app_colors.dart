@@ -9,3 +9,4 @@ final kBlackColor50Percent = Color(0xff252525).withOpacity(0.5);
 const kTransperentColor = Colors.transparent;
 const kRedColor = Color(0xffED3A3A);
 const kGreenColor = Color(0xff00FF00);
+const kGreyColor1 = Color(0xffEBEBEB);

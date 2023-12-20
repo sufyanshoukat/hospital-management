@@ -22,6 +22,33 @@ class Assets {
   /// assets/images/arb_to_eng_icon.svg
   static const String imagesArbToEngIcon = "assets/images/arb_to_eng_icon.svg";
 
+  /// Assets for imagesBNChatFill
+  /// assets/images/b_n_chat_fill.png
+  static const String imagesBNChatFill = "assets/images/b_n_chat_fill.png";
+
+  /// Assets for imagesBNChatOutline
+  /// assets/images/b_n_chat_outline.png
+  static const String imagesBNChatOutline =
+      "assets/images/b_n_chat_outline.png";
+
+  /// Assets for imagesBNHomeFill
+  /// assets/images/b_n_home_fill.png
+  static const String imagesBNHomeFill = "assets/images/b_n_home_fill.png";
+
+  /// Assets for imagesBNHomeOutline
+  /// assets/images/b_n_home_outline.png
+  static const String imagesBNHomeOutline =
+      "assets/images/b_n_home_outline.png";
+
+  /// Assets for imagesBNPersonFill
+  /// assets/images/b_n_person_fill.png
+  static const String imagesBNPersonFill = "assets/images/b_n_person_fill.png";
+
+  /// Assets for imagesBNPersonOutline
+  /// assets/images/b_n_person_outline.png
+  static const String imagesBNPersonOutline =
+      "assets/images/b_n_person_outline.png";
+
   /// Assets for imagesBackIcon1
   /// assets/images/back_icon_1.svg
   static const String imagesBackIcon1 = "assets/images/back_icon_1.svg";
@@ -29,6 +56,18 @@ class Assets {
   /// Assets for imagesBackIcon2
   /// assets/images/back_icon_2.svg
   static const String imagesBackIcon2 = "assets/images/back_icon_2.svg";
+
+  /// Assets for imagesBageIcon
+  /// assets/images/bage_icon.svg
+  static const String imagesBageIcon = "assets/images/bage_icon.svg";
+
+  /// Assets for imagesBlueLike
+  /// assets/images/blue_like.png
+  static const String imagesBlueLike = "assets/images/blue_like.png";
+
+  /// Assets for imagesBlueUnlike
+  /// assets/images/blue_unlike.png
+  static const String imagesBlueUnlike = "assets/images/blue_unlike.png";
 
   /// Assets for imagesBrainIcon
   /// assets/images/brain_icon.svg
@@ -42,6 +81,10 @@ class Assets {
   /// Assets for imagesChatIconPng
   /// assets/images/chat_icon_png.png
   static const String imagesChatIconPng = "assets/images/chat_icon_png.png";
+
+  /// Assets for imagesClinicImg22
+  /// assets/images/clinic_img_22.png
+  static const String imagesClinicImg22 = "assets/images/clinic_img_22.png";
 
   /// Assets for imagesCloseSearchIcon
   /// assets/images/close_search_icon.png
@@ -117,10 +160,10 @@ class Assets {
   static const String imagesLikeFilledIcon =
       "assets/images/like_filled_icon.svg";
 
-  /// Assets for imagesLikeIconOutlinePng
-  /// assets/images/like_icon_outline_png.png
-  static const String imagesLikeIconOutlinePng =
-      "assets/images/like_icon_outline_png.png";
+  /// Assets for imagesLikeIconOutline
+  /// assets/images/like_icon_outline.svg
+  static const String imagesLikeIconOutline =
+      "assets/images/like_icon_outline.svg";
 
   /// Assets for imagesLockIcon
   /// assets/images/lock_icon.png
@@ -133,6 +176,10 @@ class Assets {
   /// Assets for imagesLungsIcon
   /// assets/images/lungs_icon.svg
   static const String imagesLungsIcon = "assets/images/lungs_icon.svg";
+
+  /// Assets for imagesMap
+  /// assets/images/map.png
+  static const String imagesMap = "assets/images/map.png";
 
   /// Assets for imagesMapMarkerIcon
   /// assets/images/map_marker_icon.svg
@@ -148,9 +195,28 @@ class Assets {
   static const String imagesNotificationIcon2 =
       "assets/images/notification_icon_2.png";
 
+  /// Assets for imagesOnboardingImg1
+  /// assets/images/onboarding_img1.png
+  static const String imagesOnboardingImg1 =
+      "assets/images/onboarding_img1.png";
+
+  /// Assets for imagesOnboardingImg2
+  /// assets/images/onboarding_img2.png
+  static const String imagesOnboardingImg2 =
+      "assets/images/onboarding_img2.png";
+
+  /// Assets for imagesOnboardingImg3
+  /// assets/images/onboarding_img3.png
+  static const String imagesOnboardingImg3 =
+      "assets/images/onboarding_img3.png";
+
   /// Assets for imagesOncologyIcon
   /// assets/images/oncology_icon.svg
   static const String imagesOncologyIcon = "assets/images/oncology_icon.svg";
+
+  /// Assets for imagesPDIcon
+  /// assets/images/p_d_icon.png
+  static const String imagesPDIcon = "assets/images/p_d_icon.png";
 
   /// Assets for imagesPatientRelationsIcon
   /// assets/images/patient_relations_icon.svg

@@ -6,10 +6,13 @@ import 'package:hospital_management/constants/app_sizes.dart';
 import 'package:hospital_management/constants/app_styling.dart';
 import 'package:hospital_management/view/screens/home/department_search.dart';
 import 'package:hospital_management/view/screens/hospital_and_clinic/clinic.dart';
+import 'package:hospital_management/view/screens/hospital_and_clinic/clinic_detail.dart';
 import 'package:hospital_management/view/screens/hospital_and_clinic/hospital.dart';
 import 'package:hospital_management/view/screens/hospital_and_clinic/hospital_detail.dart';
-import 'package:hospital_management/view/screens/hospital_and_clinic/search_clinic_or_hospital.dart';
+import 'package:hospital_management/view/screens/hospital_and_clinic/search_screen.dart';
+import 'package:hospital_management/view/screens/settings/notification.dart';
 import 'package:hospital_management/view/widget/common_image_view_widget.dart';
+import 'package:hospital_management/view/widget/custom_dropdown_widget.dart';
 import 'package:hospital_management/view/widget/custom_textfield.dart';
 import 'package:hospital_management/view/widget/filter_btn.dart';
 import 'package:hospital_management/view/widget/main_card.dart';
@@ -25,9 +28,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int currentIndex = 0;
   bool isAddFav = false;
+  List<String> ratingText = ['NONE', '1', '2', '3', '4', '5'];
   @override
   Widget build(BuildContext context) {
+    final sizeM = MediaQuery.of(context).size;
+    final mH = sizeM.height;
+
     return Scaffold(
       body: CustomScrollView(
         physics: BouncingScrollPhysics(),
@@ -35,10 +43,125 @@ class _HomeState extends State<Home> {
           // App Bar
 
           _HomeAppBar(
-            onNotificationTap: () {},
-            onFilterTap: () {},
+            onNotificationTap: () {
+              Get.to(() => NotificationPage());
+            },
+            onFilterTap: () {
+              // Bottom Sheet
+              Get.bottomSheet(Container(
+                decoration: BoxDecoration(
+                    color: kPrimaryColor,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15))),
+                padding: AppSizes.DEFAULT,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: 19),
+                        height: 3,
+                        width: 60,
+                        decoration: BoxDecoration(
+                            color: kBlackColor1,
+                            borderRadius: BorderRadius.circular(20)),
+                      ),
+                    ),
+                    // top 3 Buttons
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        MyText(
+                          onTap: () {},
+                          text: "Cancel",
+                          weight: FontWeight.w500,
+                          size: 14,
+                          color: kSecondaryColor,
+                        ),
+                        MyText(
+                          text: "Filter",
+                          weight: FontWeight.w500,
+                          size: 20,
+                        ),
+                        MyText(
+                          onTap: () {},
+                          text: "Reset",
+                          weight: FontWeight.w500,
+                          size: 14,
+                          color: kSecondaryColor,
+                        ),
+                      ],
+                    ),
+
+                    // Drop Downs
+                    SizedBox(height: 27),
+                    CustomDropDown(
+                      onChanged: (value) {},
+                      items: ['item 1', 'item 2', 'item 3'],
+                      label: "Select City",
+                      hint: "Al Maqwa",
+                    ),
+                    height(),
+                    CustomDropDown(
+                      onChanged: (value) {},
+                      items: ['item 1', 'item 2', 'item 3'],
+                      label: "Select Specialty",
+                      hint: "Brain Specialist",
+                    ),
+                    height(),
+                    CustomDropDown(
+                      onChanged: (value) {},
+                      items: ['item 1', 'item 2', 'item 3'],
+                      label: "Sort by",
+                      hint: "Price",
+                    ),
+                    height(),
+                    MyText(
+                      paddingBottom: 10,
+                      text: "Rtings",
+                      size: 12,
+                      weight: FontWeight.w400,
+                      color: kBlackColor1,
+                    ),
+
+                    SizedBox(
+                      height: 30,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        physics: NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: 6,
+                        itemBuilder: (context, index) {
+                          return _RatingButtons(
+                            onTap: () {
+                              currentIndex = index;
+                              // setState(() {});
+                            },
+                            buttonText: ratingText[index],
+                            isStarVisible: index == 0 ? false : true,
+                            fillColor: (index == currentIndex)
+                                ? kSecondaryColor
+                                : kTransperentColor,
+                            borderColor: (index == currentIndex)
+                                ? kTransperentColor
+                                : kBlackColor1,
+                            textColor: (index == currentIndex)
+                                ? kPrimaryColor
+                                : kBlackColor1,
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ));
+            },
             onTextFieldTap: () {
-              Get.to(() => SearchClinicORHospitals());
+              Get.to(() => SearchScreen());
             },
           ),
 
@@ -117,8 +240,9 @@ class _HomeState extends State<Home> {
 
                       // Popular Hospitals
 
-                      SizedBox(
-                        height: 158,
+                      Container(
+                        //color: Colors.amber,
+                        height: mH * 0.2,
                         child: GridView.builder(
                           physics: NeverScrollableScrollPhysics(),
                           padding: EdgeInsets.zero,
@@ -213,7 +337,9 @@ class _HomeState extends State<Home> {
                       padding: EdgeInsets.only(right: 10),
                       child: MainCard(
                         useSmallCard: true,
-                        onCardTap: () {},
+                        onCardTap: () {
+                          Get.to(() => ClinicDetails());
+                        },
                         onFavTap: () {
                           isAddFav == false
                               ? isAddFav = true
@@ -243,6 +369,10 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
+  }
+
+  SizedBox height() {
+    return SizedBox(height: 18);
   }
 }
 
@@ -340,9 +470,7 @@ class _HomeAppBar extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
-                height: 26,
-              ),
+              SizedBox(height: 26),
             ],
           ),
         ),
@@ -367,6 +495,55 @@ class Adds extends StatelessWidget {
           size: 14,
           weight: FontWeight.w400,
         ),
+      ),
+    );
+  }
+}
+
+class _RatingButtons extends StatelessWidget {
+  final String? buttonText;
+  final Color fillColor, borderColor, textColor;
+  final bool isStarVisible;
+  final VoidCallback? onTap;
+
+  const _RatingButtons({
+    super.key,
+    this.buttonText,
+    this.fillColor = kTransperentColor,
+    this.borderColor = kBlackColor1,
+    this.textColor = kBlackColor1,
+    this.isStarVisible = true,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final mW = MediaQuery.of(context).size.width;
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.only(right: mW * 0.025),
+        padding: EdgeInsets.symmetric(vertical: 7, horizontal: 12),
+        height: 27,
+        decoration: BoxDecoration(
+          color: fillColor,
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(color: borderColor, width: 1),
+        ),
+        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          MyText(
+            paddingRight: (isStarVisible == true) ? 5 : 0,
+            text: "$buttonText",
+            size: 8,
+            weight: FontWeight.w500,
+            color: textColor,
+          ),
+          (isStarVisible == true)
+              ? CommonImageView(
+                  svgPath: Assets.imagesStarFillIcon,
+                )
+              : SizedBox()
+        ]),
       ),
     );
   }

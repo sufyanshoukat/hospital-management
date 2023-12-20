@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_management/constants/app_colors.dart';
 import 'package:hospital_management/constants/app_images.dart';
 import 'package:hospital_management/constants/app_sizes.dart';
 import 'package:hospital_management/view/screens/auth/login/login.dart';
+import 'package:hospital_management/view/widget/my_text_widget.dart';
 import 'package:hospital_management/view/widget/sliver_app_bar_widget_first.dart';
 
 class EditProfile extends StatefulWidget {
@@ -52,11 +54,35 @@ class _EditProfileState extends State<EditProfile> {
                     hint: "Strong Password",
                     suffixIcon: Assets.imagesLockIcon,
                   ),
+                  sH(),
+
+                  Row(
+                    children: [
+                      Expanded(child: dropdown("Country")),
+                      SizedBox(width: 20),
+                      Expanded(child: dropdown("Gender")),
+                    ],
+                  )
                 ],
               ),
             ),
           )
         ],
+      ),
+    );
+  }
+
+  Container dropdown(title) {
+    return Container(
+      padding: EdgeInsets.only(top: 14, bottom: 14, left: 23),
+      height: 50,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: kTertiaryColor),
+      child: MyText(
+        text: title,
+        size: 14,
+        weight: FontWeight.w400,
+        color: kBlackColor50Percent,
       ),
     );
   }

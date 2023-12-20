@@ -14,14 +14,14 @@ import 'package:hospital_management/view/widget/review_widegt.dart';
 import 'package:hospital_management/view/widget/round_button.dart';
 import 'package:hospital_management/view/widget/specializations_card.dart';
 
-class HospitalsDetails extends StatefulWidget {
-  const HospitalsDetails({super.key});
+class ClinicDetails extends StatefulWidget {
+  const ClinicDetails({super.key});
 
   @override
-  State<HospitalsDetails> createState() => _HospitalsDetailsState();
+  State<ClinicDetails> createState() => _ClinicDetailsState();
 }
 
-class _HospitalsDetailsState extends State<HospitalsDetails>
+class _ClinicDetailsState extends State<ClinicDetails>
     with TickerProviderStateMixin {
   late final TabController _tabController;
 
@@ -39,7 +39,6 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
 
   bool isFav = false;
   bool isLiked = false;
-  bool showReadMore = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -225,126 +224,59 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
                     )
                   ],
                 ),
+                // SizedBox(height: 12),
+                MyText(
+                  paddingTop: 32,
+                  text: "Doctors Available",
+                  size: 16,
+                  color: kBlackColor1,
+                  weight: FontWeight.w500,
+                ),
                 SizedBox(height: 12),
-
-                // Tab Bar Secondary
-
-                TabBar.secondary(
-                  labelColor: kSecondaryColor,
-                  indicatorColor: kSecondaryColor,
-                  controller: _tabController,
-                  unselectedLabelColor: kBlackColor50Percent,
-                  labelStyle:
-                      TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-                  tabs: <Widget>[
-                    Tab(text: 'Gallery'),
-                    Tab(text: 'Doctors'),
-                    Tab(text: 'Reviews'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    DoctorProfileBtn(
+                      onTap: () {
+                        Get.to(() => DoctorProfile());
+                      },
+                      doctorTitle: "Dr. Tim Brown",
+                      doctorSubTitle: "Cardiologist",
+                    ),
+                    DoctorProfileBtn(
+                      onTap: () {
+                        Get.to(() => DoctorProfile());
+                      },
+                      doctorTitle: "Dr. Tim Brown",
+                      doctorSubTitle: "Cardiologist",
+                    ),
+                    DoctorProfileBtn(
+                      onTap: () {
+                        Get.to(() => DoctorProfile());
+                      },
+                      doctorTitle: "Dr. Tim Brown",
+                      doctorSubTitle: "Cardiologist",
+                    ),
                   ],
                 ),
-                SizedBox(height: 20),
-                SizedBox(
-                  height: 200,
-                  width: double.maxFinite,
-                  child: TabBarView(
-                    physics: NeverScrollableScrollPhysics(),
-                    controller: _tabController,
-                    children: [
-                      Expanded(
-                        child: GridView.builder(
-                          physics: BouncingScrollPhysics(),
-                          padding: EdgeInsets.zero,
-                          shrinkWrap: true,
-                          itemCount: 10,
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 3,
-                                  mainAxisSpacing: 10,
-                                  crossAxisSpacing: 10),
-                          itemBuilder: (context, index) => CommonImageView(
-                            height: 13,
-                            width: 107,
-                            imagePath: Assets.imagesHospitalImg2,
-                            radius: 10,
-                          ),
-                        ),
-                      ),
-                      //Second Widget
-                      //------------------------------------
-                      // GridView.builder(
-                      //     shrinkWrap: true,
-                      //     padding: EdgeInsets.zero,
-                      //     physics: const BouncingScrollPhysics(),
-                      //     itemCount: 10,
-                      //     gridDelegate:
-                      //         SliverGridDelegateWithFixedCrossAxisCount(
-                      //             crossAxisCount: 3,
-                      //             crossAxisSpacing: 5,
-                      //             mainAxisSpacing: 50),
-                      //     itemBuilder: (context, index) => DoctorProfileBtn(
-                      //           onTap: () {},
-                      //           doctorTitle: "Dr. Tim Brown",
-                      //           doctorSubTitle: "Cardiologist",
-                      //         )),
 
-                      //-----------------------------------
-                      //-----------------------------------
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          DoctorProfileBtn(
-                            onTap: () {
-                              Get.to(() => DoctorProfile());
-                            },
-                            doctorTitle: "Dr. Tim Brown",
-                            doctorSubTitle: "Cardiologist",
+                SizedBox(height: 20),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 50),
+                  height: 120,
+                  width: double.maxFinite,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                          image: AssetImage(
+                            Assets.imagesMap,
                           ),
-                          DoctorProfileBtn(
-                            onTap: () {
-                              Get.to(() => DoctorProfile());
-                            },
-                            doctorTitle: "Dr. Tim Brown",
-                            doctorSubTitle: "Cardiologist",
-                          ),
-                          DoctorProfileBtn(
-                            onTap: () {
-                              Get.to(() => DoctorProfile());
-                            },
-                            doctorTitle: "Dr. Tim Brown",
-                            doctorSubTitle: "Cardiologist",
-                          ),
-                        ],
-                      ),
-                      //Third Widegt
-                      //-----------------------------------
-                      Container(
-                        height: 50,
-                        color: Colors.red,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          physics: BouncingScrollPhysics(),
-                          padding: EdgeInsets.zero,
-                          itemCount: 3,
-                          itemBuilder: (context, index) => ReviewsWidegt(
-                            popupOnTap: () {},
-                            likeOnTap: () {
-                              isLiked ? isLiked = false : isLiked = true;
-                              setState(() {});
-                            },
-                            viewAllOnTap: () {},
-                            isLiked: isLiked,
-                            profileImg: Assets.imagesProfileImg,
-                            title: "James Vince",
-                            date: "30 July 2023",
-                            reviews:
-                                """I recently had to visit Better Care Hospital for a medical procedure, and I was thoroughly impressed with the level of care I received. The medical staff, from the doctors to the nurses, were not only highly skilled but also incredibly compassionate.""",
-                            likePersons: "12 person helped",
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                )
+                          fit: BoxFit.cover)),
+                  child: Center(
+                      child: MyButton(
+                          height: 44, buttonText: "Location", onTap: () {})),
+                ),
+                SizedBox(height: 20),
               ],
             ),
           ),

@@ -32,4 +32,14 @@ class AppStyling {
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20), topRight: Radius.circular(20)));
   }
+
+
+
+
+    BoxDecoration onBoardingBkImg(img) {
+    return BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(img),
+                  fit: BoxFit.cover));
+  }
 }
