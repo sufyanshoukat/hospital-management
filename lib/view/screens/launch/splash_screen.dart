@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hospital_management/constants/app_images.dart';
-import 'package:hospital_management/view/screens/auth/login/login.dart';
 import 'package:hospital_management/view/screens/onboarding/onboarding.dart';
 import 'package:hospital_management/view/widget/common_image_view_widget.dart';
 

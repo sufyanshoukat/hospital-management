@@ -10,7 +10,6 @@ import 'package:hospital_management/view/widget/common_image_view_widget.dart';
 import 'package:hospital_management/view/widget/doctor_profile_btn.dart';
 import 'package:hospital_management/view/widget/my_button.dart';
 import 'package:hospital_management/view/widget/my_text_widget.dart';
-import 'package:hospital_management/view/widget/review_widegt.dart';
 import 'package:hospital_management/view/widget/round_button.dart';
 import 'package:hospital_management/view/widget/specializations_card.dart';
 
@@ -288,15 +287,19 @@ class _ClinicDetailsState extends State<ClinicDetails>
 
 SizedBox width() => SizedBox(width: 8);
 
+// ignore: unused_element
 class _HospitalDetailAppBar extends StatelessWidget {
   final String? bkImg;
   final VoidCallback onFavTap;
   final bool isFav;
 
   const _HospitalDetailAppBar({
+    // ignore: unused_element
     super.key,
+    // ignore: unused_element
     this.bkImg,
     required this.onFavTap,
+    // ignore: unused_element
     this.isFav = false,
   });
 
