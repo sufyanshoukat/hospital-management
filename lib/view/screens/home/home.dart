@@ -48,117 +48,7 @@ class _HomeState extends State<Home> {
             },
             onFilterTap: () {
               // Bottom Sheet
-              Get.bottomSheet(Container(
-                decoration: BoxDecoration(
-                    color: kPrimaryColor,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15))),
-                padding: AppSizes.DEFAULT,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Align(
-                      alignment: Alignment.center,
-                      child: Container(
-                        margin: EdgeInsets.only(bottom: 19),
-                        height: 3,
-                        width: 60,
-                        decoration: BoxDecoration(
-                            color: kBlackColor1,
-                            borderRadius: BorderRadius.circular(20)),
-                      ),
-                    ),
-                    // top 3 Buttons
-
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        MyText(
-                          onTap: () {},
-                          text: "Cancel",
-                          weight: FontWeight.w500,
-                          size: 14,
-                          color: kSecondaryColor,
-                        ),
-                        MyText(
-                          text: "Filter",
-                          weight: FontWeight.w500,
-                          size: 20,
-                        ),
-                        MyText(
-                          onTap: () {},
-                          text: "Reset",
-                          weight: FontWeight.w500,
-                          size: 14,
-                          color: kSecondaryColor,
-                        ),
-                      ],
-                    ),
-
-                    // Drop Downs
-                    SizedBox(height: 27),
-                    CustomDropDown(
-                      onChanged: (value) {},
-                      items: ['item 1', 'item 2', 'item 3'],
-                      label: "Select City",
-                      hint: "Al Maqwa",
-                    ),
-                    height(),
-                    CustomDropDown(
-                      onChanged: (value) {},
-                      items: ['item 1', 'item 2', 'item 3'],
-                      label: "Select Specialty",
-                      hint: "Brain Specialist",
-                    ),
-                    height(),
-                    CustomDropDown(
-                      onChanged: (value) {},
-                      items: ['item 1', 'item 2', 'item 3'],
-                      label: "Sort by",
-                      hint: "Price",
-                    ),
-                    height(),
-                    MyText(
-                      paddingBottom: 10,
-                      text: "Rtings",
-                      size: 12,
-                      weight: FontWeight.w400,
-                      color: kBlackColor1,
-                    ),
-
-                    SizedBox(
-                      height: 30,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        physics: NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: 6,
-                        itemBuilder: (context, index) {
-                          return _RatingButtons(
-                            onTap: () {
-                              currentIndex = index;
-                              // setState(() {});
-                            },
-                            buttonText: ratingText[index],
-                            isStarVisible: index == 0 ? false : true,
-                            fillColor: (index == currentIndex)
-                                ? kSecondaryColor
-                                : kTransperentColor,
-                            borderColor: (index == currentIndex)
-                                ? kTransperentColor
-                                : kBlackColor1,
-                            textColor: (index == currentIndex)
-                                ? kPrimaryColor
-                                : kBlackColor1,
-                          );
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ));
+              filterBottomSheet();
             },
             onTextFieldTap: () {
               Get.to(() => SearchScreen());
@@ -369,6 +259,117 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
+  }
+
+  Future<dynamic> filterBottomSheet() {
+    return Get.bottomSheet(Container(
+      decoration: BoxDecoration(
+          color: kPrimaryColor,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15), topRight: Radius.circular(15))),
+      padding: AppSizes.DEFAULT,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 19),
+              height: 3,
+              width: 60,
+              decoration: BoxDecoration(
+                  color: kBlackColor1, borderRadius: BorderRadius.circular(20)),
+            ),
+          ),
+          // top 3 Buttons
+
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              MyText(
+                onTap: () {},
+                text: "Cancel",
+                weight: FontWeight.w500,
+                size: 14,
+                color: kSecondaryColor,
+              ),
+              MyText(
+                text: "Filter",
+                weight: FontWeight.w500,
+                size: 20,
+              ),
+              MyText(
+                onTap: () {},
+                text: "Reset",
+                weight: FontWeight.w500,
+                size: 14,
+                color: kSecondaryColor,
+              ),
+            ],
+          ),
+
+          // Drop Downs
+          SizedBox(height: 27),
+          CustomDropDown(
+            onChanged: (value) {},
+            items: ['item 1', 'item 2', 'item 3'],
+            label: "Select City",
+            hint: "Al Maqwa",
+          ),
+          height(),
+          CustomDropDown(
+            onChanged: (value) {},
+            items: ['item 1', 'item 2', 'item 3'],
+            label: "Select Specialty",
+            hint: "Brain Specialist",
+          ),
+          height(),
+          CustomDropDown(
+            onChanged: (value) {},
+            items: ['item 1', 'item 2', 'item 3'],
+            label: "Sort by",
+            hint: "Price",
+          ),
+          height(),
+          MyText(
+            paddingBottom: 10,
+            text: "Rtings",
+            size: 12,
+            weight: FontWeight.w400,
+            color: kBlackColor1,
+          ),
+
+          SizedBox(
+            height: 30,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 6,
+              itemBuilder: (context, index) {
+                return _RatingButtons(
+                  onTap: () {
+                    currentIndex = index;
+                    // setState(() {});
+                  },
+                  buttonText: ratingText[index],
+                  isStarVisible: index == 0 ? false : true,
+                  fillColor: (index == currentIndex)
+                      ? kSecondaryColor
+                      : kTransperentColor,
+                  borderColor: (index == currentIndex)
+                      ? kTransperentColor
+                      : kBlackColor1,
+                  textColor:
+                      (index == currentIndex) ? kPrimaryColor : kBlackColor1,
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    ));
   }
 
   SizedBox height() {

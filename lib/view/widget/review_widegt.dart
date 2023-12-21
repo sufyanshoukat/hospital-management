@@ -96,9 +96,11 @@ class ReviewsWidegt extends StatelessWidget {
               SizedBox(height: 11.65),
               Row(
                 children: [
-                  GestureDetector(
+                  InkWell(
                     onTap: likeOnTap,
                     child: CommonImageView(
+                      height: 16,
+                      width: 15,
                       svgPath: (isLiked == false)
                           ? Assets.imagesLikeIconOutline
                           : Assets.imagesLikeFilledIcon,
@@ -106,7 +108,7 @@ class ReviewsWidegt extends StatelessWidget {
                   ),
                   Expanded(
                     child: MyText(
-                      paddingLeft: 7,
+                      paddingLeft: 11,
                       text: "$likePersons",
                       weight: FontWeight.w400,
                       size: 9,
@@ -116,7 +118,7 @@ class ReviewsWidegt extends StatelessWidget {
                   GestureDetector(
                     onTap: viewAllOnTap,
                     child: MyText(
-                      paddingLeft: 10,
+                      paddingLeft: 11,
                       text: "View reply",
                       weight: FontWeight.w400,
                       size: 9,

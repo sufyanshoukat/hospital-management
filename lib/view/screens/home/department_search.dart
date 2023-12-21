@@ -39,7 +39,7 @@ class _DepartmentSearchState extends State<DepartmentSearch> {
     "Radiology",
     "Pharmacy",
     "Psychiatry",
-    "Patient Relations"
+    "Patient"
   ];
   @override
   Widget build(BuildContext context) {
@@ -47,9 +47,7 @@ class _DepartmentSearchState extends State<DepartmentSearch> {
       appBar: simpleAppBar(title: "Departments"),
       body: Padding(
         padding: AppSizes.DEFAULT,
-        child: ListView(
-          padding: EdgeInsets.zero,
-          physics: BouncingScrollPhysics(),
+        child: Column(
           children: [
             Row(
               children: [
@@ -67,12 +65,13 @@ class _DepartmentSearchState extends State<DepartmentSearch> {
                   ),
                 ),
                 SizedBox(width: 10),
-                FilterBtn(onTap: () {})
+                FilterBtn(onTap: () {
+                
+                })
               ],
             ),
             SizedBox(height: 40),
             Expanded(
-                child: Container(
               //  color: Colors.amber,
               child: GridView.builder(
                 padding: EdgeInsets.all(0),
@@ -98,7 +97,7 @@ class _DepartmentSearchState extends State<DepartmentSearch> {
                   );
                 },
               ),
-            ))
+            )
           ],
         ),
       ),

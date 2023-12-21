@@ -42,10 +42,10 @@ class CustomTextField extends StatelessWidget {
   final Color lableColor;
   final Color txtColor;
   final bool enabled;
-  final ValueChanged<String>? onChanged;
+  // final ValueChanged<String>? onChanged;
   final GestureTapCallback? onSuffixTap;
   final VoidCallback? onTextFieldTap;
-  final bool textFieldEnable , readOnly;
+  final bool textFieldEnable, readOnly;
 
   //final bool needSvgInPrefix;
 
@@ -54,7 +54,7 @@ class CustomTextField extends StatelessWidget {
     this.controller,
     this.radius = 10,
     this.enabled = true,
-    this.onChanged,
+    //this.onChanged,
     this.onSuffixTap,
     this.borderRadius = 0,
     this.borderColor = kTransperentColor,
@@ -91,7 +91,7 @@ class CustomTextField extends StatelessWidget {
     this.txtColor = kBlackColor1,
     this.onTextFieldTap,
     this.textFieldEnable = true,
-    this.readOnly = true,
+    this.readOnly = false,
     //this.needSvgInPrefix = false,
   });
 
@@ -115,10 +115,10 @@ class CustomTextField extends StatelessWidget {
           TextFormField(
             readOnly: readOnly,
             enableInteractiveSelection: textFieldEnable,
-            onTap: onTextFieldTap,
+            onTap: onTextFieldTap ?? null,
             cursorColor: kSecondaryColor,
             enabled: enabled,
-            onChanged: onChanged,
+            //onChanged: onChanged,
             style: TextStyle(color: txtColor),
             decoration: InputDecoration(
               prefixIcon: (prefixIconNeed == false)

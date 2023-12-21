@@ -45,6 +45,8 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
   bool showReadMore = false;
   @override
   Widget build(BuildContext context) {
+    final mQ = MediaQuery.of(context).size;
+    final mH = mQ.height;
     String text =
         '''Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.''';
 
@@ -114,7 +116,7 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
             decoration: AppStyling().hospitalCardDecoration(),
 
             child: ListView(
-              physics: BouncingScrollPhysics(),
+              physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               padding: AppSizes.DEFAULT,
               children: [
@@ -262,31 +264,29 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
                 ),
                 SizedBox(height: 20),
                 SizedBox(
-                  height: 270,
+                  height: mH * 0.4,
                   width: double.maxFinite,
                   child: TabBarView(
                     physics: NeverScrollableScrollPhysics(),
                     controller: _tabController,
                     children: [
-                      Expanded(
-                        child: GridView.builder(
-                          physics: BouncingScrollPhysics(),
-                          padding: EdgeInsets.zero,
-                          shrinkWrap: true,
-                          itemCount: 10,
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 3,
-                                  mainAxisSpacing: 10,
-                                  crossAxisSpacing: 10),
-                          itemBuilder: (context, index) => CommonImageView(
-                            height: 13,
-                            width: 107,
-                            imagePath: Assets.imagesHospitalImg2,
-                            radius: 10,
-                          ),
+                      GridView.builder(
+                        physics: BouncingScrollPhysics(),
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        itemCount: 10,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 10),
+                        itemBuilder: (context, index) => CommonImageView(
+                          height: 13,
+                          width: 107,
+                          imagePath: Assets.imagesHospitalImg2,
+                          radius: 10,
                         ),
                       ),
+
                       //Second Widget
                       //------------------------------------
                       // GridView.builder(
@@ -335,31 +335,30 @@ class _HospitalsDetailsState extends State<HospitalsDetails>
                       ),
                       //Third Widegt
                       //-----------------------------------
-                      Expanded(
-                        // height: 50,
-                        //color: Colors.red,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          physics: BouncingScrollPhysics(),
-                          padding: EdgeInsets.zero,
-                          itemCount: 3,
-                          itemBuilder: (context, index) => ReviewsWidegt(
-                            popupOnTap: () {},
-                            likeOnTap: () {
-                              isLiked ? isLiked = false : isLiked = true;
-                              setState(() {});
-                            },
-                            viewAllOnTap: () {},
-                            isLiked: isLiked,
-                            profileImg: Assets.imagesProfileImg,
-                            title: "James Vince",
-                            date: "30 July 2023",
-                            reviews:
-                                """I recently had to visit Better Care Hospital for a medical procedure, and I was thoroughly impressed with the level of care I received. The medical staff, from the doctors to the nurses, were not only highly skilled but also incredibly compassionate.""",
-                            likePersons: "12 person helped",
-                          ),
+
+                      // height: 50,
+                      //color: Colors.red,
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: BouncingScrollPhysics(),
+                        padding: EdgeInsets.zero,
+                        itemCount: 3,
+                        itemBuilder: (context, index) => ReviewsWidegt(
+                          popupOnTap: () {},
+                          likeOnTap: () {
+                            isLiked ? isLiked = false : isLiked = true;
+                            setState(() {});
+                          },
+                          viewAllOnTap: () {},
+                          isLiked: isLiked,
+                          profileImg: Assets.imagesProfileImg,
+                          title: "James Vince",
+                          date: "30 July 2023",
+                          reviews:
+                              """I recently had to visit Better Care Hospital for a medical procedure, and I was thoroughly impressed with the level of care I received. The medical staff, from the doctors to the nurses, were not only highly skilled but also incredibly compassionate.""",
+                          likePersons: "12 person helped",
                         ),
-                      )
+                      ),
                     ],
                   ),
                 )

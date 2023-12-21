@@ -36,6 +36,8 @@ class _DoctorProfileState extends State<DoctorProfile>
 
   @override
   Widget build(BuildContext context) {
+    final mQ = MediaQuery.of(context).size;
+    final mH = mQ.height;
     return Scaffold(
       body: CustomScrollView(
         physics: NeverScrollableScrollPhysics(),
@@ -81,33 +83,32 @@ class _DoctorProfileState extends State<DoctorProfile>
                   ),
 
                   SizedBox(height: 20),
-                  Container(
-                    height: 400,
+                  SizedBox(
+                    height: mH * 0.4,
                     // color: Colors.amber,
                     width: double.maxFinite,
                     child: TabBarView(
                       physics: NeverScrollableScrollPhysics(),
                       controller: _tabController,
                       children: [
-                        Expanded(
-                          child: GridView.builder(
-                            physics: BouncingScrollPhysics(),
-                            padding: EdgeInsets.zero,
-                            shrinkWrap: true,
-                            itemCount: 10,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 3,
-                                    mainAxisSpacing: 10,
-                                    crossAxisSpacing: 10),
-                            itemBuilder: (context, index) => CommonImageView(
-                              height: 13,
-                              width: 107,
-                              imagePath: Assets.imagesHospitalImg2,
-                              radius: 10,
-                            ),
+                        GridView.builder(
+                          physics: BouncingScrollPhysics(),
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          itemCount: 10,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3,
+                                  mainAxisSpacing: 10,
+                                  crossAxisSpacing: 10),
+                          itemBuilder: (context, index) => CommonImageView(
+                            height: 13,
+                            width: 107,
+                            imagePath: Assets.imagesHospitalImg2,
+                            radius: 10,
                           ),
                         ),
+
                         //Second Widget
                         //------------------------------------
 
@@ -200,7 +201,7 @@ class _DoctorProfileState extends State<DoctorProfile>
                                 """I recently had to visit Better Care Hospital for a medical procedure, and I was thoroughly impressed with the level of care I received. The medical staff, from the doctors to the nurses, were not only highly skilled but also incredibly compassionate.""",
                             likePersons: "12 person helped",
                           ),
-                        )
+                        ),
                       ],
                     ),
                   )
@@ -226,9 +227,9 @@ class _ButtonIcons extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-          margin: EdgeInsets.only(right: 8),
-          height: 23,
-          width: 23,
+          margin: EdgeInsets.only(right: 12),
+          height: 30,
+          width: 30,
           decoration: BoxDecoration(color: kGreyColor1, shape: BoxShape.circle),
           child: Center(
             child: CommonImageView(
