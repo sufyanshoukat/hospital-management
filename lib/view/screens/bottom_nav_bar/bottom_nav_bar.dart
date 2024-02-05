@@ -32,6 +32,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       PersistentBottomNavBarItem(
         icon: CommonImageView(
           imagePath: Assets.imagesBNPersonFill,
+          pngColor: kSecondaryColor,
         ),
         inactiveIcon: CommonImageView(
           imagePath: Assets.imagesBNPersonOutline,

@@ -8,6 +8,7 @@ import 'package:hospital_management/view/screens/auth/login/login.dart';
 import 'package:hospital_management/view/widget/checkbox_widget.dart';
 import 'package:hospital_management/view/widget/my_button.dart';
 import 'package:hospital_management/view/widget/my_text_widget.dart';
+import 'package:hospital_management/view/widget/social_button.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -29,35 +30,102 @@ class _RegisterState extends State<Register> {
               // Logo Title & subTitle
 
               LogoAndText(
-                title: "Get Started",
-                subTitle: "by creating a free account.",
+                haveLogo: false,
+                title: "Sign Up",
+                subTitle: "Let’s go and start your account!",
               ),
+              SizedBox(height: 20),
 
               TextFieldWithSuffixIcon(
                 hint: "Full name",
                 suffixIcon: Assets.imagesPersonNameIcon,
                 suffixIconHeight: 16,
               ),
-              SizedBox(height: 25),
 
-              TextFieldWithSuffixIcon(
-                hint: "Valid email",
-                suffixIcon: Assets.imagesEmailIcon,
-                suffixIconHeight: 16,
-              ),
               SizedBox(height: 25),
 
               // Password Field
               TextFieldWithSuffixIcon(
-                hint: "Phone number",
-                suffixIcon: Assets.imagesPhoneNumberIcon,
+                hint: "Email",
+                suffixIcon: Assets.imagesEmailIcon,
+                suffixIconHeight: 13,
               ),
               SizedBox(height: 25),
               TextFieldWithSuffixIcon(
                 hint: "Strong Password",
                 suffixIcon: Assets.imagesLockIcon,
+                suffixIconHeight: 14,
               ),
-              SizedBox(height: 14),
+
+              SizedBox(height: 20),
+
+              MyButton(buttonText: "Sign Up", onTap: () {}),
+              SizedBox(height: 15),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MyText(
+                    paddingRight: 4,
+                    text: "Already a member?",
+                    size: 13,
+                    weight: FontWeight.w500,
+                  ),
+
+                  // Login In
+
+                  MyText(
+                    onTap: () {
+                      Get.to(Login());
+                    },
+                    text: "Log In",
+                    size: 13,
+                    weight: FontWeight.w700,
+                    color: kSecondaryColor,
+                  ),
+                ],
+              ),
+              SizedBox(height: 30),
+
+              Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                      thickness: 1,
+                      color: kGreyColor2,
+                    ),
+                  ),
+                  MyText(
+                    paddingLeft: 10,
+                    paddingRight: 10,
+                    text: 'or',
+                    size: 13,
+                    color: kGreyColor2,
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 1,
+                      color: kGreyColor2,
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 30),
+              SocialButton(
+                  svgIcon: Assets.imagesGoogleIcon,
+                  buttonText: "Log In with Google",
+                  onTap: () {}),
+              SizedBox(height: 15),
+              SocialButton(
+                  svgIcon: Assets.imagesLogosFacebook,
+                  buttonText: "Log In with Facebook",
+                  onTap: () {}),
+              SizedBox(height: 15),
+              SocialButton(
+                  svgIcon: Assets.imagesPajamasTwitter,
+                  buttonText: "Log In with Twitter",
+                  onTap: () {}),
+
+              SizedBox(height: 20),
 
               Row(
                 children: [
@@ -90,44 +158,6 @@ class _RegisterState extends State<Register> {
       ),
 
       // Login button and Register Button
-
-      bottomNavigationBar: Container(
-        padding: AppSizes.HORIZONTAL,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Register
-
-            MyButton(buttonText: "Register", onTap: () {}),
-
-            SizedBox(height: 23),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                MyText(
-                  paddingRight: 4,
-                  text: "Already a member?",
-                  size: 13,
-                  weight: FontWeight.w500,
-                ),
-
-                // Login In
-
-                MyText(
-                  onTap: () {
-                    Get.to(Login());
-                  },
-                  text: "Log In",
-                  size: 13,
-                  weight: FontWeight.w700,
-                  color: kSecondaryColor,
-                ),
-              ],
-            ),
-            SizedBox(height: 23),
-          ],
-        ),
-      ),
     );
   }
 }

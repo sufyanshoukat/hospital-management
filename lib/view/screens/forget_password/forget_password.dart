@@ -43,9 +43,8 @@ class _FogotPasswordState extends State<FogotPassword> {
                   ),
 
                   TextFieldWithSuffixIcon(
-                    hint: "Enter your email",
-                    suffixIcon: Assets.imagesEmailIcon,
-                    suffixIconHeight: 16,
+                    hint: "Enter your phone number",
+                    suffixIcon: Assets.imagesPhoneNumberIcon,
                   ),
 
                   SizedBox(height: 48),

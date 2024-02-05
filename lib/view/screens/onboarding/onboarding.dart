@@ -25,8 +25,8 @@ class _OnBoardingState extends State<OnBoarding> {
   ];
 
   List<String> title = [
-    'Empowering Your Health Journey',
-    'Enhancing Your Healthcare',
+    'The simplest way toEmpowering Your Health Journey',
+    'Finding the best healthcare destination',
     ''
   ];
   List<String> subTitle = [

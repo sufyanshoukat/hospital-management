@@ -65,9 +65,7 @@ class _DepartmentSearchState extends State<DepartmentSearch> {
                   ),
                 ),
                 SizedBox(width: 10),
-                FilterBtn(onTap: () {
-                
-                })
+                FilterBtn(onTap: () {})
               ],
             ),
             SizedBox(height: 40),

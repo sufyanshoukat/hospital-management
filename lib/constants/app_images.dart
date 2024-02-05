@@ -18,6 +18,10 @@ class Assets {
   /// assets/images/app_logo_3.png
   static const String imagesAppLogo3 = "assets/images/app_logo_3.png";
 
+  /// Assets for imagesAppLogo4
+  /// assets/images/app_logo_4.png
+  static const String imagesAppLogo4 = "assets/images/app_logo_4.png";
+
   /// Assets for imagesArbToEngIcon
   /// assets/images/arb_to_eng_icon.svg
   static const String imagesArbToEngIcon = "assets/images/arb_to_eng_icon.svg";
@@ -135,6 +139,10 @@ class Assets {
   static const String imagesFilterWhiteIcon =
       "assets/images/filter_white_icon.svg";
 
+  /// Assets for imagesGoogleIcon
+  /// assets/images/google_icon.svg
+  static const String imagesGoogleIcon = "assets/images/google_icon.svg";
+
   /// Assets for imagesHistoryIcon
   /// assets/images/history_icon.svg
   static const String imagesHistoryIcon = "assets/images/history_icon.svg";
@@ -168,6 +176,10 @@ class Assets {
   /// Assets for imagesLockIcon
   /// assets/images/lock_icon.png
   static const String imagesLockIcon = "assets/images/lock_icon.png";
+
+  /// Assets for imagesLogosFacebook
+  /// assets/images/logos_facebook.svg
+  static const String imagesLogosFacebook = "assets/images/logos_facebook.svg";
 
   /// Assets for imagesLogoutIcon
   /// assets/images/logout_icon.svg
@@ -217,6 +229,11 @@ class Assets {
   /// Assets for imagesPDIcon
   /// assets/images/p_d_icon.png
   static const String imagesPDIcon = "assets/images/p_d_icon.png";
+
+  /// Assets for imagesPajamasTwitter
+  /// assets/images/pajamas_twitter.svg
+  static const String imagesPajamasTwitter =
+      "assets/images/pajamas_twitter.svg";
 
   /// Assets for imagesPatientRelationsIcon
   /// assets/images/patient_relations_icon.svg

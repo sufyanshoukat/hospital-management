@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:hospital_management/constants/app_colors.dart';
 import 'package:hospital_management/constants/app_images.dart';
@@ -23,6 +22,7 @@ class SliverAppBarWidegtFirst extends StatelessWidget {
       pinned: true,
       expandedHeight: 110,
       backgroundColor: kSecondaryColor,
+      //kSecondaryColor,
       leading: Container(
         height: 36,
         width: 36,
@@ -41,7 +41,7 @@ class SliverAppBarWidegtFirst extends StatelessWidget {
                 height: 30,
                 width: 50,
                 child: CommonImageView(
-                  imagePath: Assets.imagesAppLogo,
+                  imagePath: Assets.imagesAppLogo4,
                   fit: BoxFit.contain,
                   height: 30,
                   width: 49,

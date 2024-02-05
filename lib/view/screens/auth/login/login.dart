@@ -11,6 +11,7 @@ import 'package:hospital_management/view/widget/common_image_view_widget.dart';
 import 'package:hospital_management/view/widget/custom_textfield.dart';
 import 'package:hospital_management/view/widget/my_button.dart';
 import 'package:hospital_management/view/widget/my_text_widget.dart';
+import 'package:hospital_management/view/widget/social_button.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -98,6 +99,11 @@ class _LoginState extends State<Login> {
                 onTap: () {
                   Get.to(OTP());
                 }),
+            SizedBox(height: 15),
+            SocialButton(
+                svgIcon: Assets.imagesGoogleIcon,
+                buttonText: "Log In with Google",
+                onTap: () {}),
 
             SizedBox(height: 23),
             Row(
@@ -131,6 +137,19 @@ class _LoginState extends State<Login> {
   }
 }
 
+// class GoogleButton extends StatelessWidget {
+//   final VoidCallback onTap;
+//   const GoogleButton({super.key, required this.onTap});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return SocialButton(
+//         svgIcon: Assets.imagesGoogleIcon,
+//         buttonText: "Log In with Google",
+//         onTap: onTap);
+//   }
+// }
+
 // ignore: must_be_immutable
 class TextFieldWithSuffixIcon extends StatelessWidget {
   final String? hint, suffixIcon;
@@ -163,27 +182,31 @@ class TextFieldWithSuffixIcon extends StatelessWidget {
 
 class LogoAndText extends StatelessWidget {
   final String? title, subTitle;
-  const LogoAndText({super.key, this.title, this.subTitle});
+  final bool haveLogo;
+  const LogoAndText(
+      {super.key, this.title, this.subTitle, this.haveLogo = true});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 40),
-        CommonImageView(
-          imagePath: Assets.imagesAppLogo,
-          height: 81,
-          width: 128,
-        ),
+        SizedBox(height: haveLogo ? 25 : 0),
+        haveLogo
+            ? CommonImageView(
+                imagePath: Assets.imagesAppLogo,
+                height: 81,
+                width: 128,
+              )
+            : SizedBox(),
         MyText(
-          paddingTop: 25,
+          paddingTop: 20,
           text: title.toString(),
           size: 24,
           weight: FontWeight.w600,
           textAlign: TextAlign.center,
         ),
         MyText(
-          paddingBottom: 53,
+          paddingBottom: haveLogo ? 53 : 0,
           text: subTitle.toString(),
           size: 14,
           weight: FontWeight.w300,

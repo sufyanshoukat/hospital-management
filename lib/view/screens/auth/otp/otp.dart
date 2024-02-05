@@ -6,8 +6,6 @@ import 'package:hospital_management/constants/app_fonts.dart';
 import 'package:hospital_management/constants/app_sizes.dart';
 import 'package:hospital_management/constants/app_styling.dart';
 import 'package:hospital_management/view/screens/bottom_nav_bar/bottom_nav_bar.dart';
-import 'package:hospital_management/view/screens/home/home.dart';
-import 'package:hospital_management/view/screens/settings/setting.dart';
 import 'package:hospital_management/view/widget/back_button.dart';
 import 'package:hospital_management/view/widget/my_button.dart';
 import 'package:hospital_management/view/widget/my_text_widget.dart';

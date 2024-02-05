@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_management/constants/app_colors.dart';
 import 'package:hospital_management/constants/app_images.dart';
 import 'package:hospital_management/view/widget/common_image_view_widget.dart';
 import 'package:hospital_management/view/widget/my_text_widget.dart';
@@ -19,6 +20,7 @@ class DepartmentButton extends StatelessWidget {
             height: 54,
             width: 54,
             widget: CommonImageView(
+              svgColor: kSecondaryColor,
               svgPath: svgIcon ?? Assets.imagesCardiologyIcon,
             )),
         MyText(

@@ -9,6 +9,8 @@ class CommonImageView extends StatelessWidget {
   String? url;
   String? imagePath;
   String? svgPath;
+  final Color? svgColor;
+  final Color? pngColor;
   File? file;
   double? height;
   double? width;
@@ -17,6 +19,8 @@ class CommonImageView extends StatelessWidget {
   final String placeHolder;
 
   CommonImageView({
+    this.svgColor,
+    this.pngColor,
     this.url,
     this.imagePath,
     this.svgPath,
@@ -45,6 +49,7 @@ class CommonImageView extends StatelessWidget {
             height: height,
             width: width,
             fit: fit,
+            color: svgColor,
           ),
         ),
       );
@@ -96,6 +101,7 @@ class CommonImageView extends StatelessWidget {
           height: height,
           width: width,
           fit: fit,
+          color: pngColor,
         ),
       );
     }

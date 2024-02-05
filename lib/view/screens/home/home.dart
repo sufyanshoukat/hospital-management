@@ -411,7 +411,7 @@ class _HomeAppBar extends StatelessWidget {
           horizontal: 15,
         ),
         child: CommonImageView(
-          imagePath: Assets.imagesAppLogo3,
+          imagePath: Assets.imagesAppLogo4,
           fit: BoxFit.contain,
         ),
       ),
