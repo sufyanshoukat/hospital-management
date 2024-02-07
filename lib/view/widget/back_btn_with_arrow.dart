@@ -6,8 +6,9 @@ import 'package:hospital_management/view/widget/common_image_view_widget.dart';
 import 'package:hospital_management/view/widget/round_button.dart';
 
 class BackBtnWithArrow extends StatelessWidget {
-  final Color bkColor;
-  const BackBtnWithArrow({super.key, this.bkColor = kPrimaryColor});
+  final Color bkColor, iconColor;
+  BackBtnWithArrow(
+      {super.key, this.bkColor = kPrimaryColor, this.iconColor = kBlackColor1});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +18,10 @@ class BackBtnWithArrow extends StatelessWidget {
       },
       height: 36,
       width: 36,
-      color: bkColor.withOpacity(0.09),
+      color: bkColor.withOpacity(0.5),
       widget: CommonImageView(
         svgPath: Assets.imagesBackIcon2,
+        svgColor: iconColor,
       ),
     );
   }

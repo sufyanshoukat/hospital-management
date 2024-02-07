@@ -25,7 +25,7 @@ class SocialButton extends StatelessWidget {
       margin: EdgeInsets.only(top: marginTop),
       height: height,
       decoration: BoxDecoration(
-          color: kPrimaryColor,
+          color: kWhiteColor,
           boxShadow: [
             // BoxShadow(
             //   offset: Offset(0, 4),
@@ -40,7 +40,7 @@ class SocialButton extends StatelessWidget {
         color: kTransperentColor,
         child: InkWell(
           onTap: onTap,
-          splashColor: kPrimaryColor.withOpacity(0.1),
+          splashColor: kWhiteColor.withOpacity(0.1),
           highlightColor: kTertiaryColor.withOpacity(0.1),
           borderRadius: BorderRadius.circular(5),
           child: Row(

@@ -264,7 +264,7 @@ class _HomeState extends State<Home> {
   Future<dynamic> filterBottomSheet() {
     return Get.bottomSheet(Container(
       decoration: BoxDecoration(
-          color: kPrimaryColor,
+          color: kWhiteColor,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15), topRight: Radius.circular(15))),
       padding: AppSizes.DEFAULT,
@@ -362,7 +362,7 @@ class _HomeState extends State<Home> {
                       ? kTransperentColor
                       : kBlackColor1,
                   textColor:
-                      (index == currentIndex) ? kPrimaryColor : kBlackColor1,
+                      (index == currentIndex) ? kWhiteColor : kBlackColor1,
                 );
               },
             ),
@@ -404,14 +404,14 @@ class _HomeAppBar extends StatelessWidget {
       pinned: true,
       expandedHeight: 193,
       leadingWidth: 100,
-      backgroundColor: kSecondaryColor,
+      backgroundColor: kWhiteColor,
       leading: Container(
         // color: Colors.amber,
         padding: EdgeInsets.symmetric(
           horizontal: 15,
         ),
         child: CommonImageView(
-          imagePath: Assets.imagesAppLogo4,
+          imagePath: Assets.imagesAppLogo5,
           fit: BoxFit.contain,
         ),
       ),
@@ -421,10 +421,11 @@ class _HomeAppBar extends StatelessWidget {
             children: [
               RoundButton(
                   onTap: onNotificationTap,
-                  color: kPrimaryColor.withOpacity(0.1),
+                  color: kPrimaryColor,
                   splashRadius: 0,
                   widget: CommonImageView(
                     svgPath: Assets.imagesNotificationIcon,
+                    svgColor: kSecondaryColor,
                   )),
               Positioned(
                   right: 0,
@@ -432,7 +433,7 @@ class _HomeAppBar extends StatelessWidget {
                       ? Icon(
                           Icons.circle,
                           size: 10,
-                          color: kGreenColor,
+                          color: kSecondaryColor,
                         )
                       : SizedBox())
             ],
@@ -451,15 +452,17 @@ class _HomeAppBar extends StatelessWidget {
                   Expanded(
                     child: CustomTextField(
                       onTextFieldTap: onTextFieldTap,
+                      filled: true,
                       readOnly: true,
                       hintText: "Search for treatment...",
-                      backgroundColor: kPrimaryColor.withOpacity(0.2),
+                      backgroundColor: kTertiaryColor,
                       outlineBorderColor: kTransperentColor,
                       borderWidth: 5,
-                      hintTextFontColor: kPrimaryColor,
+                      hintTextFontColor: kBlackColor1,
                       hintTextFontSize: 15,
                       prefixIconNeed: true,
-                      prefixIcon: Assets.imagesSearchIconPng,
+                      prefixIcon: Assets.imagesSearchGreyIcon,
+                      prefixIconColor: kBlackColor1.withOpacity(0.5),
                     ),
                   ),
                   SizedBox(

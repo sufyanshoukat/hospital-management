@@ -78,7 +78,7 @@ class _OnBoardingState extends State<OnBoarding> {
                               text: title[index],
                               size: 32,
                               weight: FontWeight.w500,
-                              color: kPrimaryColor,
+                              color: kWhiteColor,
                             ),
                             MyText(
                               paddingTop: 6,
@@ -86,7 +86,7 @@ class _OnBoardingState extends State<OnBoarding> {
                               text: subTitle[index],
                               size: 20,
                               weight: FontWeight.w300,
-                              color: kPrimaryColor,
+                              color: kWhiteColor,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,7 +102,7 @@ class _OnBoardingState extends State<OnBoarding> {
                                     itemBuilder: (context, i) => _Indecator(
                                       clr: index == i
                                           ? kSecondaryColor
-                                          : kPrimaryColor,
+                                          : kWhiteColor,
                                     ),
                                   ),
                                 ),
@@ -117,7 +117,7 @@ class _OnBoardingState extends State<OnBoarding> {
                                     color: kSecondaryColor,
                                     widget: Icon(
                                       Icons.arrow_forward_ios_rounded,
-                                      color: kPrimaryColor,
+                                      color: kWhiteColor,
                                     )),
                               ],
                             ),
@@ -191,7 +191,7 @@ class _Indecator extends StatelessWidget {
   final Color clr;
   final bool isIndexCorrect;
   const _Indecator(
-      {super.key, this.clr = kPrimaryColor, this.isIndexCorrect = true});
+      {super.key, this.clr = kWhiteColor, this.isIndexCorrect = true});
 
   @override
   Widget build(BuildContext context) {
@@ -230,11 +230,11 @@ class _OutlineButton extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         border: Border.all(color: kSecondaryColor, width: 1),
-        color: kPrimaryColor,
+        color: kWhiteColor,
         boxShadow: [
           BoxShadow(
             offset: Offset(0, 4),
-            color: kPrimaryColor.withOpacity(0.25),
+            color: kWhiteColor.withOpacity(0.25),
             blurRadius: 15,
             spreadRadius: 0,
           ),

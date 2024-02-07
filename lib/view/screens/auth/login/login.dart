@@ -23,6 +23,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhiteColor,
       body: SafeArea(
         child: Padding(
           padding: AppSizes.DEFAULT,
@@ -164,7 +165,7 @@ class TextFieldWithSuffixIcon extends StatelessWidget {
       this.suffixIcon,
       this.controller,
       this.suffixIconHeight,
-      this.bkColor = kTertiaryColor});
+      this.bkColor = kWhiteColor});
 
   @override
   Widget build(BuildContext context) {

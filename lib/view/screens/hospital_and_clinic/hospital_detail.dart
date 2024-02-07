@@ -404,7 +404,8 @@ class _HospitalDetailAppBar extends StatelessWidget {
       leading: Container(
           child: Center(
               child: BackBtnWithArrow(
-        bkColor: kBlackColor1,
+        iconColor: kWhiteColor,
+        bkColor: kWhiteColor,
       ))),
       actions: [
         Center(

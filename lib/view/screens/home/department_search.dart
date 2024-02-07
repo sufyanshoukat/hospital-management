@@ -54,7 +54,7 @@ class _DepartmentSearchState extends State<DepartmentSearch> {
                 Expanded(
                   child: CustomTextField(
                     hintText: "Search for treatment...",
-                    backgroundColor: kTertiaryColor,
+                    backgroundColor: kWhiteColor,
                     outlineBorderColor: kTransperentColor,
                     borderWidth: 5,
                     hintTextFontColor: kBlackColor50Percent,

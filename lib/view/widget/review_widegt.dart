@@ -70,7 +70,7 @@ class ReviewsWidegt extends StatelessWidget {
             Expanded(
               child: Container(
                 height: 1,
-                color: kPrimaryColor,
+                color: kWhiteColor,
               ),
             ),
             GestureDetector(

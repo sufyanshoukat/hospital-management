@@ -62,7 +62,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       screens: _buildScreens(),
       items: _navBarsItems(),
       decoration: NavBarDecoration(
-        colorBehindNavBar: kPrimaryColor,
+        colorBehindNavBar: kWhiteColor,
       ),
       //popAllScreensOnTapOfSelectedTab: false,
       popActionScreens: PopActionScreensType.all,

@@ -20,6 +20,7 @@ class _FogotPasswordState extends State<FogotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhiteColor,
       body: SafeArea(
           child: Padding(
               padding: AppSizes.DEFAULT,

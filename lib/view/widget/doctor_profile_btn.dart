@@ -29,7 +29,7 @@ class DoctorProfileBtn extends StatelessWidget {
                     height: 101,
                     // width: 107,
                     decoration: BoxDecoration(
-                      color: kPrimaryColor,
+                      color: kWhiteColor,
                       border: Border.all(color: kSecondaryColor),
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -72,7 +72,7 @@ class DoctorProfileBtn extends StatelessWidget {
                   height: 36,
                   width: 36,
                   decoration: BoxDecoration(
-                      color: kPrimaryColor,
+                      color: kWhiteColor,
                       border: Border.all(color: kTertiaryColor, width: 2),
                       borderRadius: BorderRadius.circular(10)),
                   child: CommonImageView(
@@ -92,7 +92,7 @@ class DoctorProfileBtn extends StatelessWidget {
                       width: 36,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: kPrimaryColor,
+                        color: kWhiteColor,
                         border: Border.all(color: kSecondaryColor, width: 1),
                       ),
                       child: Center(
@@ -107,7 +107,7 @@ class DoctorProfileBtn extends StatelessWidget {
                             child: Icon(
                               Icons.arrow_forward_ios_rounded,
                               size: 10,
-                              color: kPrimaryColor,
+                              color: kWhiteColor,
                             ),
                           ),
                         ),

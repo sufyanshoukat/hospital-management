@@ -63,7 +63,8 @@ class _ClinicDetailsState extends State<ClinicDetails>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       BackBtnWithArrow(
-                        bkColor: kBlackColor1,
+                        iconColor: kPrimaryColor,
+                        bkColor: kPrimaryColor,
                       ),
                       RoundButton(
                           onTap: () {},

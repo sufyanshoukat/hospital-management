@@ -15,8 +15,12 @@ class AppStyling {
   }
 
   settingCardDecoration() {
-    return BoxDecoration(
-        color: kSecondaryColor, borderRadius: BorderRadius.circular(7.84));
+    return BoxDecoration(boxShadow: [
+      BoxShadow(
+          color: kBlackColor1.withOpacity(0.2),
+          blurRadius: 10,
+          spreadRadius: 0.5)
+    ], color: kWhiteColor, borderRadius: BorderRadius.circular(7.84));
   }
 
   BoxDecoration adsDecoration() {
@@ -28,7 +32,7 @@ class AppStyling {
 
   BoxDecoration hospitalCardDecoration() {
     return BoxDecoration(
-        color: kPrimaryColor,
+        color: kWhiteColor,
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20), topRight: Radius.circular(20)));
   }

@@ -9,7 +9,7 @@ class MyButton extends StatelessWidget {
       required this.onTap,
       this.height = 48,
       this.backgroundColor = kSecondaryColor,
-      this.fontColor = kPrimaryColor,
+      this.fontColor = kWhiteColor,
       this.fontSize = 16});
 
   final String buttonText;
@@ -28,7 +28,7 @@ class MyButton extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             offset: Offset(0, 4),
-            color: kPrimaryColor.withOpacity(0.25),
+            color: kWhiteColor.withOpacity(0.25),
             blurRadius: 15,
             spreadRadius: 0,
           ),
@@ -40,7 +40,7 @@ class MyButton extends StatelessWidget {
         //color: backgroundColor,
         child: InkWell(
           onTap: onTap,
-          splashColor: kPrimaryColor.withOpacity(0.1),
+          splashColor: kWhiteColor.withOpacity(0.1),
           highlightColor: kTertiaryColor.withOpacity(0.1),
           borderRadius: BorderRadius.circular(10),
           child: Row(

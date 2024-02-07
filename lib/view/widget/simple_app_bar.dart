@@ -8,6 +8,7 @@ import 'package:hospital_management/view/widget/my_text_widget.dart';
 simpleAppBar({required String title}) {
   return AppBar(
     backgroundColor: kPrimaryColor,
+    surfaceTintColor: kPrimaryColor,
     leading: Center(child: BackBtn()),
     leadingWidth: 70,
     title: MyText(
@@ -19,12 +20,12 @@ simpleAppBar({required String title}) {
     actions: [
       Center(
         child: CommonImageView(
-          imagePath: Assets.imagesAppLogo2,
-          height: 17,
+          imagePath: Assets.imagesAppLogo5,
+          height: 27,
         ),
       ),
       SizedBox(
-        width: 10,
+        width: 20,
       )
     ],
   );

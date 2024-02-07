@@ -129,7 +129,7 @@ class _HistoryCard extends StatelessWidget {
                           ),
                           RoundButton(
                               onTap: onFavTap,
-                              color: kPrimaryColor,
+                              color: kWhiteColor,
                               splashRadius: 0,
                               height: 19.31,
                               widget: CommonImageView(

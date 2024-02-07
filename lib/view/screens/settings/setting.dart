@@ -81,6 +81,7 @@ class _SettingState extends State<Setting> {
                           svgPath: isLanguageEng
                               ? Assets.imagesEngToArbIcon
                               : Assets.imagesArbToEngIcon,
+                          svgColor: kBlackColor1.withOpacity(0.5),
                         )),
                   ],
                 ),
@@ -168,6 +169,7 @@ class _SettingTile extends StatelessWidget {
           children: [
             CommonImageView(
               svgPath: svgIcon,
+              svgColor: kBlackColor1.withOpacity(0.5),
             ),
             SizedBox(width: 13),
             Expanded(
@@ -175,13 +177,13 @@ class _SettingTile extends StatelessWidget {
                 text: title.toString(),
                 size: 14.71,
                 weight: FontWeight.w400,
-                color: kPrimaryColor,
+                color: kBlackColor1.withOpacity(0.5),
               ),
             ),
             haveAction
                 ? Icon(
                     Icons.arrow_forward_ios_rounded,
-                    color: kPrimaryColor,
+                    color: kBlackColor1.withOpacity(0.5),
                     size: 13,
                   )
                 : Container(

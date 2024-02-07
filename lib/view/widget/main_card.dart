@@ -68,7 +68,7 @@ class MainCard extends StatelessWidget {
                   top: 11,
                   child: RoundButton(
                       onTap: onFavTap,
-                      color: kPrimaryColor,
+                      color: kWhiteColor,
                       splashRadius: 0,
                       height: 19.31,
                       widget: CommonImageView(

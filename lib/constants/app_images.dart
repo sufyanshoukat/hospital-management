@@ -22,6 +22,10 @@ class Assets {
   /// assets/images/app_logo_4.png
   static const String imagesAppLogo4 = "assets/images/app_logo_4.png";
 
+  /// Assets for imagesAppLogo5
+  /// assets/images/app_logo_5.png
+  static const String imagesAppLogo5 = "assets/images/app_logo_5.png";
+
   /// Assets for imagesArbToEngIcon
   /// assets/images/arb_to_eng_icon.svg
   static const String imagesArbToEngIcon = "assets/images/arb_to_eng_icon.svg";
@@ -280,6 +284,11 @@ class Assets {
   /// Assets for imagesRadiologyIcon
   /// assets/images/radiology_icon.svg
   static const String imagesRadiologyIcon = "assets/images/radiology_icon.svg";
+
+  /// Assets for imagesSearchGreyIcon
+  /// assets/images/search_grey_icon.png
+  static const String imagesSearchGreyIcon =
+      "assets/images/search_grey_icon.png";
 
   /// Assets for imagesSearchGreyIconPng
   /// assets/images/search_grey_icon_png.png

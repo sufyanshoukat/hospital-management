@@ -55,7 +55,7 @@ class CustomDropDown extends StatelessWidget {
                   border: Border.all(
                     color: kTertiaryColor,
                   ),
-                  color: bgColor ?? kPrimaryColor.withOpacity(0.1),
+                  color: bgColor ?? kWhiteColor.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(radius))),
           dropdownStyleData: DropdownStyleData(
               decoration: BoxDecoration(

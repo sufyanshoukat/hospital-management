@@ -17,13 +17,14 @@ class FilterBtn extends StatelessWidget {
         height: 45,
         width: 48,
         decoration: BoxDecoration(
-            color: isBlueBackground ? kSecondaryColor : kPrimaryColor,
+            color: isBlueBackground ? kSecondaryColor : kSecondaryColor,
             borderRadius: BorderRadius.circular(10)),
         child: Center(
           child: CommonImageView(
             svgPath: isBlueBackground
                 ? Assets.imagesFilterWhiteIcon
                 : Assets.imagesFilterIcon,
+            svgColor: kWhiteColor,
           ),
         ),
       ),

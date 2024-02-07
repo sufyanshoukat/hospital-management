@@ -21,6 +21,7 @@ class _NewPasswordState extends State<NewPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhiteColor,
       body: SafeArea(
           child: Padding(
               padding: AppSizes.DEFAULT,

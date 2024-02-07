@@ -19,7 +19,7 @@ class SwitchIOS extends StatelessWidget {
       child: CupertinoSwitch(
           activeColor: kSecondaryColor,
           trackColor: kTertiaryColor,
-          thumbColor: value ? kPrimaryColor : kSecondaryColor,
+          thumbColor: value ? kWhiteColor : kSecondaryColor,
           value: value,
           onChanged: onChanged),
     );

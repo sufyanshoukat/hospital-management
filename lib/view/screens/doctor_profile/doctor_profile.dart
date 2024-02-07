@@ -44,7 +44,7 @@ class _DoctorProfileState extends State<DoctorProfile>
         slivers: [
           SliverAppBarWidegtFirst(
             title: "Doctor Profile",
-            haveAction: false,
+            haveAction: true,
           ),
           SliverFillRemaining(
             hasScrollBody: false,
@@ -235,6 +235,7 @@ class _ButtonIcons extends StatelessWidget {
             child: CommonImageView(
               imagePath: icon,
               height: 11.5,
+              pngColor: kSecondaryColor,
             ),
           )),
     );
@@ -336,6 +337,7 @@ class _DoctorCard extends StatelessWidget {
                         CommonImageView(
                           imagePath: Assets.imagesPDIcon,
                           height: 8,
+                          pngColor: kSecondaryColor,
                         ),
                         MyText(
                           paddingLeft: 4,

@@ -21,7 +21,7 @@ class SliverAppBarWidegtFirst extends StatelessWidget {
       toolbarHeight: 100,
       pinned: true,
       expandedHeight: 110,
-      backgroundColor: kSecondaryColor,
+      backgroundColor: kWhiteColor,
       //kSecondaryColor,
       leading: Container(
         height: 36,
@@ -33,7 +33,7 @@ class SliverAppBarWidegtFirst extends StatelessWidget {
         text: "$title",
         size: 18,
         weight: FontWeight.w500,
-        color: kPrimaryColor,
+        color: kBlackColor1,
       ),
       actions: [
         haveAction
@@ -41,7 +41,7 @@ class SliverAppBarWidegtFirst extends StatelessWidget {
                 height: 30,
                 width: 50,
                 child: CommonImageView(
-                  imagePath: Assets.imagesAppLogo4,
+                  imagePath: Assets.imagesAppLogo5,
                   fit: BoxFit.contain,
                   height: 30,
                   width: 49,

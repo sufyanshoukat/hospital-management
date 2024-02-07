@@ -63,7 +63,7 @@ class _EditProfileState extends State<EditProfile> {
                           child: CustomDropDown(
                               radius: 10,
                               haveLabel: false,
-                              bgColor: kTertiaryColor,
+                              bgColor: kWhiteColor,
                               hint: "Country",
                               items: ['item 1', 'item 2'],
                               onChanged: (v) {})),
@@ -72,7 +72,7 @@ class _EditProfileState extends State<EditProfile> {
                           child: CustomDropDown(
                               radius: 10,
                               haveLabel: false,
-                              bgColor: kTertiaryColor,
+                              bgColor: kWhiteColor,
                               hint: "Gender",
                               items: ['Male', 'Female'],
                               onChanged: (v) {})),
