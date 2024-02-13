@@ -25,7 +25,7 @@ class AppStyling {
 
   BoxDecoration adsDecoration() {
     return BoxDecoration(
-      color: kTertiaryColor,
+      color: kWhiteColor,
       borderRadius: BorderRadius.circular(3.81),
     );
   }

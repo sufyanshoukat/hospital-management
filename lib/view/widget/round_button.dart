@@ -11,7 +11,7 @@ class RoundButton extends StatelessWidget {
       {super.key,
       this.height = 36,
       this.width = 36,
-      this.color = kTertiaryColor,
+      this.color = kWhiteColor,
       required this.onTap,
       required this.widget,
       this.splashColor = kBlackColor1,

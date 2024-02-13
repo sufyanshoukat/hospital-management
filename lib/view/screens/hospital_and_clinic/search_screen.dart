@@ -26,7 +26,7 @@ class _SearchScreenState extends State<SearchScreen> {
             padding: EdgeInsets.only(top: 60, bottom: 30, right: 20, left: 20),
             //height: 200,
             decoration: BoxDecoration(
-                color: kSecondaryColor,
+                color: kWhiteColor,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20))),
@@ -36,6 +36,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 SizedBox(width: 15),
                 Expanded(
                   child: TextFieldWithSuffixIcon(
+                    bkColor: kGreyColor1,
                     hint: "Search Clinic",
                     suffixIcon: Assets.imagesCloseSearchIcon,
                     suffixIconHeight: 16,
@@ -49,9 +50,9 @@ class _SearchScreenState extends State<SearchScreen> {
             paddingTop: 16,
             paddingBottom: 15,
             text: "This Clinic offers heart infection packages",
-            size: 12,
+            size: 14,
             weight: FontWeight.w400,
-            color: kBlackColor50Percent,
+            color: kBlackColor1,
           ),
           Expanded(
             child: ListView.builder(

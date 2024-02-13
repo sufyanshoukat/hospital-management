@@ -171,6 +171,7 @@ class _HomeState extends State<Home> {
 
                 SizedBox(height: 22),
 
+                // Ads
                 SizedBox(
                   height: 80,
                   child: ListView.builder(
