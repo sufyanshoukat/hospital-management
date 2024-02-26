@@ -20,7 +20,7 @@ simpleAppBar({required String title}) {
     actions: [
       Center(
         child: CommonImageView(
-          imagePath: Assets.imagesAppLogo5,
+          imagePath: Assets.imagesAppLogo6,
           height: 27,
         ),
       ),

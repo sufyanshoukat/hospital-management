@@ -41,7 +41,7 @@ class SliverAppBarWidegtFirst extends StatelessWidget {
                 height: 30,
                 width: 50,
                 child: CommonImageView(
-                  imagePath: Assets.imagesAppLogo5,
+                  imagePath: Assets.imagesAppLogo6,
                   fit: BoxFit.contain,
                   height: 30,
                   width: 49,
